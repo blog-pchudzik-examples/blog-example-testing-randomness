@@ -24,19 +24,4 @@ class DiscountService {
 			this.endDate = endDate;
 		}
 	}
-
-	//@Entity
-	static class TimeLimitedDiscount {
-		private final LocalDateTime startDate;
-		private final LocalDateTime endDate;
-
-		public TimeLimitedDiscount(LocalDateTime startDate, LocalDateTime endDate) {
-			this.startDate = startDate;
-			this.endDate = endDate;
-		}
-
-		public boolean isActive(LocalDateTime now) {
-			return startDate.isAfter(now) && endDate.isBefore(now);
-		}
-	}
 }

@@ -15,7 +15,9 @@ import static org.junit.Assert.assertFalse;
  */
 public class DiscountServiceTest {
 	private final long nowMilliseconds = 1521056135184L;
-	private final Clock fixedClock = Clock.fixed(Instant.ofEpochMilli(nowMilliseconds), ZoneId.systemDefault());
+	private final Clock fixedClock = Clock.fixed(
+			Instant.ofEpochMilli(nowMilliseconds),
+			ZoneId.systemDefault());
 	private final LocalDateTime now = LocalDateTime.now(fixedClock);
 
 	private final DiscountService discountService = new DiscountService(fixedClock);

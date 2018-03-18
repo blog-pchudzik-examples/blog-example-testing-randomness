@@ -12,16 +12,26 @@ public class MageAttackTest {
 
 	@Test
 	public void should_have_at_least_base_attack_strength() {
+		//given
 		final int baseAttack = 100;
 
-		assertEquals(baseAttack, new Mage(baseAttack).attack(fixedRandom(minAttackFactor)));
+		//when
+		final int attackPoints = new Mage(baseAttack).attack(fixedRandom(minAttackFactor));
+
+		//then
+		assertEquals(baseAttack, attackPoints);
 	}
 
 	@Test
 	public void should_have_up_to_20_percent_more_attack_strength() {
+		//given
 		final int baseAttack = 100;
 
-		assertEquals(baseAttack + 20, new Mage(baseAttack).attack(fixedRandom(maxAttackFactor)));
+		//when
+		final int attackPoints = new Mage(baseAttack).attack(fixedRandom(maxAttackFactor));
+
+		//then
+		assertEquals(baseAttack + 20, attackPoints);
 	}
 
 	private Random fixedRandom(int number) {
